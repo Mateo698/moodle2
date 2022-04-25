@@ -1,7 +1,9 @@
+import TestList from "../components/home/TestList";
+
 export default function logedtest(){
     return(
         <div>
-            <h1>Inicio sesion xd</h1>
+            <TestList/>
         </div>
     )
 }
