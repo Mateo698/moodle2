@@ -8,10 +8,10 @@ export default function TestList(){
 
     return(
         <div>
-            <TestItem title="Dummy" id = "A03"/>
-            {tests.map(test=>(
-                <h1>{test.title}</h1>
-            ))}
+            {tests.map((test)=>(
+                <TestItem title={test.title}
+                id = {test.id}/>
+                ))}
         </div>
     )
 }
