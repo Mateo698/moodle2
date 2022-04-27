@@ -45,9 +45,13 @@ export default function Home() {
     }
 
     const data = await fetch("http://localhost:3000/api/login",config)
-    //const r = await data.json()
+    const r = await data.json()
 
-    //console.log(r)
+    if(r.login == "yes"){
+      location = "/logedtest"
+    }else{
+      document.getElementById("wrong").removeAttribute("hidden")
+    }
   }
 
  

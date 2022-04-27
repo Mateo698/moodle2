@@ -4,13 +4,20 @@ export default async function hanlder(req,res){
     const {method , body} = req;
     const username = body.username
     const pass = body.password
-    var good = new Boolean(false)
+    var access = "no"
+
+    for (let i = 0; i < users.length; i++) {
+        if(users[i].username == username){
+            if(users[i].password == pass){
+                access = "yes"
+            }
+        }
+    }
+
     if(method == 'POST'){
-        res.redirect('/register');
-        next()
-        //res.status(200).json({name: "Pepe"})
+        res.status(200).json({login: access})
     }else{
-        res.statu(200).json(users)
+        res.status(200).json(users)
     }
    
     

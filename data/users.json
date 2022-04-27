@@ -2,9 +2,11 @@
     "users" : [
     {
         "username" : "Pepega",
-        "password" : "123"
+        "password" : "123",
+        "type" : "Student"
     },{
         "username" : "Pepe",
-        "password" : "123"
+        "password" : "123",
+        "type" : "Teacher"
     }]
 }
