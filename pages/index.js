@@ -25,10 +25,9 @@ export default function Home() {
     console.log(users)
   }
 
-  const data = fetch("http://localhost:3000/api/login").then((response) => response.json())
-  .then((value)=>{
-    return value;
-  })
+ 
+
+  
 
   function onClick(e){
 
@@ -36,7 +35,19 @@ export default function Home() {
   }
 
   let onLoginClick = async e =>{
-    
+    let config = {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(state)
+    }
+
+    const data = await fetch("http://localhost:3000/api/login",config)
+    //const r = await data.json()
+
+    //console.log(r)
   }
 
  
