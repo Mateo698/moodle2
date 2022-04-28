@@ -23,8 +23,10 @@ export default async function handler(req,res){
                 "type" : body.type 
             }
             users.push(newUser)
-            let jsonData = JSON.stringify(users)
-            fs.writeFile('./data/users.json',jsonData)
+            const newUsers = { "users" : users}
+            let jsonData = JSON.stringify(newUsers)
+           
+            fs.writeFile('./data/users.json',jsonData,(error)=>{if(error){console.log(error)}})
             res.status(200).json({result : "done"})
         }else{
             res.status(200).json({result : "error"})

@@ -31,7 +31,7 @@ function RegisterForm(props){
         }else{
             const data = await fetch("http://localhost:3000/api/register",config)
             const r = await data.json()
-            console.log(r + "Re")
+            console.log(r.result)
             if(r.result == "done"){
                 location = "/"
             }else{
