@@ -9,6 +9,7 @@ let state = {
   username : "",
   password : ""
 }
+
 export default function Home() {
   const typedUsernameRef = useRef()
   const typedPasswordRef = useRef()
@@ -48,7 +49,13 @@ export default function Home() {
     const r = await data.json()
 
     if(r.login == "yes"){
-      location = "/logedtest"
+      if(r.type == "Student"){
+        const url = "/users/"  + r.username 
+        location = url
+      }else{
+        location = "/"
+      }
+      
     }else{
       document.getElementById("wrong").removeAttribute("hidden")
     }
