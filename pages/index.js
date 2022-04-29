@@ -11,8 +11,7 @@ let state = {
 }
 
 export default function Home() {
-  const typedUsernameRef = useRef()
-  const typedPasswordRef = useRef()
+ 
 
   function handleChange(e){
     switch(e.target.name){
@@ -53,7 +52,8 @@ export default function Home() {
         const url = "/users/"  + r.username 
         location = url
       }else{
-        location = "/"
+        const url = "/teachers/"  + r.username 
+        location = url
       }
       
     }else{
