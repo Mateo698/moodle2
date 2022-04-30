@@ -1,6 +1,8 @@
 import next from 'next';
-import {users} from '../../data/users'
+import {db} from '../../utils/database' 
 export default async function hanlder(req,res){
+    const data = await db.query('SELECT * FROM USERS')
+    const users = data.rows
     const {method , body} = req;
     const username = body.username
     const pass = body.password
@@ -14,6 +16,8 @@ export default async function hanlder(req,res){
             }
         }
     }
+    
+
 
     if(method == 'POST'){
         res.status(200).json({login: access, username: localUser.username,type: localUser.type })

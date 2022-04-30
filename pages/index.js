@@ -67,9 +67,9 @@ export default function Home() {
     <div className={styles.container}>
       <h1>Login</h1><br></br>
       <label>Username</label><br></br>
-      <input type = "text" ref={typedUsernameRef} onChange={handleChange} name="username"></input><br></br>
+      <input type = "text"  onChange={handleChange} name="username"></input><br></br>
       <label>Pass</label><br></br>
-      <input type = "password" ref={typedPasswordRef} onChange={handleChange} name="password"></input><br></br>
+      <input type = "password"  onChange={handleChange} name="password"></input><br></br>
       <label id="wrong" hidden>Wrong username or password</label><br></br>
       <button onClick={onLoginClick}>Login</button><button onClick={onClick}>Register</button><br></br>
     </div>
