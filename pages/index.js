@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unknown-property */
 import Head from 'next/head'
 import Image from 'next/image'
 import { useRef } from 'react'
@@ -65,13 +66,22 @@ export default function Home() {
 
   return (
     <div className={styles.container}>
-      <h1>Login</h1><br></br>
-      <label>Username</label><br></br>
+      <Head>
+    <title>Bootstap</title>
+    <link rel="stylesheet"
+     href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</link>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css"></link>
+
+      </Head>
+
+      <h1 class="font-italic">Login</h1><br></br>
+     <label>Username</label><br></br>
       <input type = "text"  onChange={handleChange} name="username"></input><br></br>
       <label>Pass</label><br></br>
       <input type = "password"  onChange={handleChange} name="password"></input><br></br>
       <label id="wrong" hidden>Wrong username or password</label><br></br>
-      <button onClick={onLoginClick}>Login</button><button onClick={onClick}>Register</button><br></br>
+      <button onClick={onLoginClick}className = "btn btn-primary btn-lg"  >Login</button><button onClick={onClick} className = "btn btn-success btn-lg" > <i className="fa-solid fa-baby"></i>Register</button><br></br>
     </div>
   )
 }
