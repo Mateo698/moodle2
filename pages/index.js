@@ -75,13 +75,26 @@ export default function Home() {
 
       </Head>
 
-      <h1 class="font-italic">Login</h1><br></br>
-     <label>Username</label><br></br>
-      <input type = "text"  onChange={handleChange} name="username"></input><br></br>
+      <h1 class="font-italic"><em> <strong>Login</strong></em></h1><br></br>
+     
+     <div class="col-xs-4">
+     <label lass="float-right">Username</label><br></br>
+      <input type = "text" class="form-control"  onChange={handleChange}  name="username"  ></input><br></br>
+      </div>
+      <br>
+      </br>
+      <br>
+      </br>
+      <br>
+      </br>
+      <br>
+      </br>
+      <div class="col-xs-4">  
       <label>Pass</label><br></br>
-      <input type = "password"  onChange={handleChange} name="password"></input><br></br>
+      <input type = "password" class="form-control"   onChange={handleChange} name="password"></input><br></br>
+      </div>
       <label id="wrong" hidden>Wrong username or password</label><br></br>
-      <button onClick={onLoginClick}className = "btn btn-primary btn-lg"  >Login</button><button onClick={onClick} className = "btn btn-success btn-lg" > <i className="fa-solid fa-baby"></i>Register</button><br></br>
+      <button onClick={onLoginClick}className = "btn btn-primary btn-sm"  >Login</button> <button onClick={onClick} className = "btn btn-success btn-sm" > <i className="fa-solid fa-baby"></i>Register</button><br></br>
     </div>
   )
 }

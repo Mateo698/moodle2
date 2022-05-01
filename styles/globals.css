@@ -16,5 +16,8 @@ a {
 }
 h1 {
   text-align: center;
-  font-size:  48 px;
+  font-size:  90 px;
+}
+input{
+  text-align: center;
 }
