@@ -13,9 +13,8 @@ function userIndex({tests}){
         <div >
             <h1>Welcome: {data.user}</h1><br></br>
         
-            <TestList/>
+            <TestList testsData = {tests}/>
         
-    )
         </div>
     )
 }
