@@ -1,5 +1,7 @@
-import {users} from '../../data/users'
+import {db} from '../../utils/database'
 export default async function handler(req,res){
+    const data = await db.query('SELECT * FROM USERS')
+    const users = data.rows
     function check(username,type){
         var error = "no"
         for (let index = 0; index < users.length; index++) {
@@ -16,17 +18,9 @@ export default async function handler(req,res){
     if(method == 'POST'){
         var error = check(body.username,body.type)
         if(error == "no"){
-            var fs = require('fs')
-            var newUser = {
-                "username" : body.username,
-                "password" : body.password,
-                "type" : body.type 
-            }
-            users.push(newUser)
-            const newUsers = { "users" : users}
-            let jsonData = JSON.stringify(newUsers)
            
-            fs.writeFile('./data/users.json',jsonData,(error)=>{if(error){console.log(error)}})
+            db.query('INSERT INTO USERS (USERNAME,PASSWORD,TYPE) VALUES ($1,$2,$3)',[body.username,body.password,body.type])
+            
             res.status(200).json({result : "done"})
         }else{
             res.status(200).json({result : "error"})

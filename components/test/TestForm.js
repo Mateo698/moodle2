@@ -44,6 +44,49 @@ export default function TestForm(){
         }
     }
 
+    function checkEmpty(){
+        if(state.title == "" || state.id == "" ||
+         state.question1.statement == "" ||
+         state.question1.option1 == "" ||
+         state.question1.option2 == "" ||
+         state.question1.option3 == "" ||
+         state.question1.option4 == "" ||
+         state.question1.right == "" ||
+
+         state.question2.statement == "" ||
+         state.question2.option1 == "" ||
+         state.question2.option2 == "" ||
+         state.question2.option3 == "" ||
+         state.question2.option4 == "" ||
+         state.question2.right == "" ||
+
+         state.question3.statement == "" ||
+         state.question3.option1 == "" ||
+         state.question3.option2 == "" ||
+         state.question3.option3 == "" ||
+         state.question3.option4 == "" ||
+         state.question3.right == "" ||
+
+         state.question4.statement == "" ||
+         state.question4.option1 == "" ||
+         state.question4.option2 == "" ||
+         state.question4.option3 == "" ||
+         state.question4.option4 == "" ||
+         state.question4.right == "" ||
+
+         state.question5.statement == "" ||
+         state.question5.option1 == "" ||
+         state.question5.option2 == "" ||
+         state.question5.option3 == "" ||
+         state.question5.option4 == "" ||
+         state.question5.right == ""
+        ){
+            return false;
+        }else{
+            return true;
+        }
+    }
+
     function handleChange(e){
 
         switch(e.target.name){
@@ -90,8 +133,27 @@ export default function TestForm(){
             
 
           }
+          
       }
 
+      let handleSubmit = async e => {
+        if(checkEmpty()){
+            let config = {
+                method: 'POST',
+                headers: {
+                  'Accept': 'application/json',
+                  'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(state)
+            }
+            const data = await fetch("http://localhost:3000/api/insert",config)
+            const r = await data.json()
+            console.log(r.result)
+            location = "/"
+        }else{
+           alert("Please fill all the information")
+        }
+      }
 
     
     return(
@@ -148,7 +210,7 @@ export default function TestForm(){
                 <input type="radio" name ="q5Radio" value = "3" onClick={handleChange}></input><label>Answer 3: </label><input type="text" onChange={handleChange} name = "q5o3"></input><br/>
                 <input type="radio" name ="q5Radio" value = "4" onClick={handleChange}></input><label>Answer 4: </label><input type="text" onChange={handleChange} name = "q5o4"></input><br/>
             </div>
-            <button onClick={e => {console.log(state)}}>Create</button><button>Cancel</button>
+            <button onClick={handleSubmit}>Create</button><button>Cancel</button>
         </div>
     )
 }
