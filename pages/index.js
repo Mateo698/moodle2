@@ -74,10 +74,10 @@ export default function Home() {
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css"></link>
 
       </Head>
-
+      <div className="modal-dialog" role="document" >
       <h1 class="font-italic"><em> <strong>Login</strong></em></h1><br></br>
      
-     <div class="col-xs-4">
+     <div class="col-xs-12">
      <label lass="float-right">Username</label><br></br>
      <div class="input-group">
      <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
@@ -92,6 +92,7 @@ export default function Home() {
       <button onClick={onLoginClick} className = "btn btn-primary btn-lg"  ><i class="glyphicon glyphicon-globe"></i>Login</button> <button onClick={onClick} className = "btn btn-success btn-lg" > <i class="glyphicon glyphicon-user"></i>Register</button><br></br>
       </div>
       
+    </div>
     </div>
   )
 }
