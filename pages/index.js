@@ -79,22 +79,19 @@ export default function Home() {
      
      <div class="col-xs-4">
      <label lass="float-right">Username</label><br></br>
-      <input type = "text" class="form-control"  onChange={handleChange}  name="username"  ></input><br></br>
+     <div class="input-group">
+     <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+      <input type = "text" class="form-control"  onChange={handleChange}  name="username" placeholder="User Name" ></input><br></br>
       </div>
-      <br>
-      </br>
-      <br>
-      </br>
-      <br>
-      </br>
-      <br>
-      </br>
-      <div class="col-xs-4">  
       <label>Pass</label><br></br>
-      <input type = "password" class="form-control"   onChange={handleChange} name="password"></input><br></br>
+      <div class="input-group">
+      <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+      <input type = "password" class="form-control"   onChange={handleChange} name="password" placeholder="Password"></input><br></br>
       </div>
       <label id="wrong" hidden>Wrong username or password</label><br></br>
-      <button onClick={onLoginClick}className = "btn btn-primary btn-sm"  >Login</button> <button onClick={onClick} className = "btn btn-success btn-sm" > <i className="fa-solid fa-baby"></i>Register</button><br></br>
+      <button onClick={onLoginClick} className = "btn btn-primary btn-lg"  ><i class="glyphicon glyphicon-globe"></i>Login</button> <button onClick={onClick} className = "btn btn-success btn-lg" > <i class="glyphicon glyphicon-user"></i>Register</button><br></br>
+      </div>
+      
     </div>
   )
 }
