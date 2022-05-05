@@ -44,6 +44,10 @@ export default function TestForm(){
         }
     }
 
+    function onCancel(e){
+        location = "/"
+    }
+
     function checkEmpty(){
         if(state.title == "" || state.id == "" ||
          state.question1.statement == "" ||
@@ -210,7 +214,7 @@ export default function TestForm(){
                 <input type="radio" name ="q5Radio" value = "3" onClick={handleChange}></input><label>Answer 3: </label><input type="text" onChange={handleChange} name = "q5o3"></input><br/>
                 <input type="radio" name ="q5Radio" value = "4" onClick={handleChange}></input><label>Answer 4: </label><input type="text" onChange={handleChange} name = "q5o4"></input><br/>
             </div>
-            <button onClick={handleSubmit}>Create</button><button>Cancel</button>
+            <button onClick={handleSubmit}>Create</button><button onClick={onCancel}>Cancel</button>
         </div>
     )
 }
